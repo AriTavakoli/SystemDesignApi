@@ -7,7 +7,6 @@ const MONGO_URI = process.env.MONGO_URI;
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.json(),
-  // defaultMeta: { service: 'my-app' },
   transports: [
     new winston.transports.Console({
       format: winston.format.combine(
@@ -58,7 +57,6 @@ process.on('SIGINT', async () => {
   process.exit(0);
 });
 
-connectToMongoDB();
 
 module.exports = { connectToMongoDB, disconnectFromMongoDB };
 

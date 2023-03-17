@@ -1,3 +1,15 @@
 {"level":"info","message":"Connected to MongoDB database"}
 {"level":"info","message":"SIGINT received. Disconnecting from MongoDB database..."}
 {"level":"info","message":"MongoDB disconnected"}
+{"level":"info","message":"Connected to MongoDB database"}
+{"level":"info","message":"SIGINT received. Disconnecting from MongoDB database..."}
+{"level":"info","message":"MongoDB disconnected"}
+{"level":"info","message":"Connected to MongoDB database"}
+{"level":"info","message":"MongoDB disconnected"}
+{"level":"info","message":"Disconnected from MongoDB database"}
+{"level":"info","message":"Connected to MongoDB database"}
+{"level":"info","message":"MongoDB disconnected"}
+{"level":"info","message":"Disconnected from MongoDB database"}
+{"level":"info","message":"Connected to MongoDB database"}
+{"level":"info","message":"SIGINT received. Disconnecting from MongoDB database..."}
+{"level":"info","message":"MongoDB disconnected"}
