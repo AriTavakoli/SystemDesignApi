@@ -61,13 +61,6 @@ question.post('/', async (req: Request, res: Response) => {
 
 
 
-
-
-
-
-
-
-
     res.send('yo')
   }
 
