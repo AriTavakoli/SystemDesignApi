@@ -1,1 +1,0 @@
-{"level":"error","message":"MongoDB connection error: Can't call `openUri()` on an active connection with different connection strings. Make sure you aren't calling `mongoose.connect()` multiple times. See: https://mongoosejs.com/docs/connections.html#multiple_connections"}
