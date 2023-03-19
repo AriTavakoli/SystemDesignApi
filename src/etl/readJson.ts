@@ -2,7 +2,7 @@ const fs = require('fs');
 
 
 
-const filePathQuestions = 'C://Desktop1//ProfileData//JSON//answers.json';
+const filePathQuestions = 'C://Desktop1//ProfileData//answers_aggregated.json'
 
 function printFirst10ObjectsFromFile(filePath) {
   const readStream = fs.createReadStream(filePath);

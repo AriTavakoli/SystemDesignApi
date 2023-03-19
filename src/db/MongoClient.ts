@@ -18,29 +18,29 @@ async function main() {
     const collection = db.collection('questions');
 
     const pipeline = [
-      {
-        '$group': {
-          '_id': '$product_id',
-          'questions': {
-            '$push': {
-              'id': '$id',
-              'body': '$body',
-              'date_written': '$date_written',
-              'asker_name': '$asker_name',
-              'asker_email': '$asker_email',
-              'reported': '$reported',
-              'helpful': '$helpful'
+      [
+        {
+          '$group': {
+            '_id': '$product_id',
+            'questions': {
+              '$push': {
+                'k': {
+                  '$toString': '$id'
+                },
+                'v': '$$ROOT'
+              }
+            }
+          }
+        }, {
+          '$project': {
+            '_id': 0,
+            'product_id': '$_id',
+            'questions': {
+              '$arrayToObject': '$questions'
             }
           }
         }
-      }, {
-        '$lookup': {
-          'from': 'answers',
-          'localField': 'id',
-          'foreignField': 'question_id',
-          'as': 'answers'
-        }
-      }
+      ]
     ];
 
     // Execute the pipeline and add the results to an existing collection
