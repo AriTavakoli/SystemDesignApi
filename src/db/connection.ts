@@ -1,6 +1,12 @@
+import "module-alias/register"
 const mongoose = require('mongoose');
 require('dotenv').config();
 const winston = require('winston');
+
+
+
+
+
 
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -19,7 +25,8 @@ const logger = winston.createLogger({
   ],
 });
 
-const connectToMongoDB = async () => {
+
+const connectToMongoDB = async (): Promise<void> => {
   try {
     await mongoose.connect(MONGO_URI, {
       useNewUrlParser: true,
@@ -58,6 +65,5 @@ process.on('SIGINT', async () => {
 });
 
 
-module.exports = { connectToMongoDB, disconnectFromMongoDB };
-
+export { connectToMongoDB, disconnectFromMongoDB };
 

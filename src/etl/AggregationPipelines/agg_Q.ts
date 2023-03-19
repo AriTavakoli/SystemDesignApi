@@ -37,3 +37,34 @@ const coll = client.db('testDb').collection('questions');
 const cursor = coll.aggregate(agg);
 const result = await cursor.toArray();
 await client.close();
+
+
+// [
+//   {
+//     $group: {
+//       _id: "$product_id",
+//       questions: {
+//         $push: {
+//           k: {
+//             $toString: "$id",
+//           },
+//           v: "$$ROOT",
+//         },
+//       },
+//     },
+//   },
+//   {
+//     $project:
+//       /**
+//        * specifications: The fields to
+//        *   include or exclude.
+//        */
+//       {
+//         _id: 0,
+//         product_id: "$_id",
+//         questions: {
+//           $arrayToObject: "$questions",
+//         },
+//       },
+//   },
+// ]
