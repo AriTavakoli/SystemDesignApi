@@ -30,7 +30,6 @@ app.use(require('express-status-monitor')());
 
 
 
-
 // Route handling middleware
 app.get('/', (req: Request, res: Response) => {
   res.send('Express + TypeScript Server');

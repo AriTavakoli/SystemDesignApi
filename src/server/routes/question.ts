@@ -2,8 +2,7 @@ const express = require('express')
 const answers = express.Router()
 const mongoose = require('mongoose');
 import MongoCollection from "src/db/collections/collection";
-const AnswerController = require('../../db/controller/q');
-
+const AnswersController = require('../../db/controller/AnswerController')
 
 
 // answers.use((req, res, next) => {
@@ -16,12 +15,12 @@ const AnswerController = require('../../db/controller/q');
 answers.get('/', async (req, res) => {
 
 
-
-  let answer = await AnswerController.getQuery();
-
+  measureQueryTime(1000, 1000)
 
 
-  res.send(answer)
+  res.send('Hello World')
+
+
 })
 
 
@@ -49,7 +48,8 @@ async function measureQueryTime(numQueries, randMax) {
 
     // run the query and measure the time
     const startTime = Date.now();
-    const question = await Question.find({ product_id: rand });
+    const question = await  AnswersController.getQuery()
+
     const queryTime = Date.now() - startTime;
 
     // add the query time to the total
