@@ -4,10 +4,6 @@ require('dotenv').config();
 const winston = require('winston');
 
 
-
-
-
-
 const MONGO_URI = process.env.MONGO_URI;
 
 const logger = winston.createLogger({

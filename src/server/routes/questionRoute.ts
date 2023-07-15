@@ -56,13 +56,8 @@ question.post('/', async (req: Request, res: Response) => {
   try {
     const { name, email, product_id, body } = req.body;
     if (name && email && product_id && body) {
-
-
       console.log(name, email, product_id, body);
     }
-
-
-
     res.send('yo')
   }
 
